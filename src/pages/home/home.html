@@ -1,13 +1,16 @@
 <ion-header>
-  <ion-navbar color="primary">
-    <ion-title>Indis Weather Forecast</ion-title>
-  </ion-navbar>
+    <ion-navbar color="primary">
+        <ion-title>{{ weather?.name }}, {{ weather?.sys.country }}</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let day of weather">
-    <div class="card-title">
-      {{ day.temp.day }}<small>ºC</small>
-    </div>
-  </ion-card>
+    <ion-card>
+        <div class="weather-date">
+            {{ weather?.dt * 1000 | date : ('dd/MM/yyyy') }}
+        </div>
+        <div class="card-title">
+            {{ weather?.main.temp }}<small>ºC</small>
+        </div>
+    </ion-card>
 </ion-content>
