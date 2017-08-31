@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 export class WeatherProvider {
     private url:string;
     private urlBase = 'http://api.openweathermap.org/data/2.5/';
-    private urlParams = '&units=metric&appid=94cd6c40f0df1baa9b7db667ba255def';
+    private urlParams = '&units=metric&appid=94cd6c40f0df1baa9b7db667ba255def&lang=pt';
     //private city: string;
     //private country: string;
     //private weather: any[];
