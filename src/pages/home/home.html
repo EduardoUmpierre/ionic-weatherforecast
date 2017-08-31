@@ -1,16 +1,23 @@
 <ion-header>
-    <ion-navbar color="primary">
-        <ion-title>{{ weather?.name }}, {{ weather?.sys.country }}</ion-title>
-    </ion-navbar>
+  <ion-navbar color="primary">
+    <ion-title>{{ weather?.name }}, {{ weather?.sys.country }}</ion-title>
+  </ion-navbar>
 </ion-header>
 
-<ion-content>
-    <ion-card>
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col align-self-center>
         <div class="weather-date">
-            {{ weather?.dt * 1000 | date : ('dd/MM/yyyy') }}
+          {{ weather?.dt * 1000 | date : ('dd/MM/yyyy') }}
         </div>
-        <div class="card-title">
-            {{ weather?.main.temp }}<small>ºC</small>
+        <div class="weather-temperature">
+          {{ weather?.main.temp }}<small>ºC</small>
         </div>
-    </ion-card>
+        <div class="weather-description">
+          {{ weather?.weather[0].description }}
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
